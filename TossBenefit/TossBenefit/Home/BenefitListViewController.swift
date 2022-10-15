@@ -16,9 +16,19 @@ class BenefitListViewController: UIViewController {
     // - 사용자는 포인트 셀을 눌렀을 때, 포인트 상세 뷰로 넘어간다. -> didSelectedItem func
     // - 사용자는 혜택 관련 셀을 눌렀을 때, 혜택 상세 뷰로 넘어간다.
     //
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    enum Section {
+        case today
+        case others
+    }
+    typealias Item = AnyHashable
+    
+    var dataSource: UICollectionViewDiffableDataSource<Section, Item>!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
 
 

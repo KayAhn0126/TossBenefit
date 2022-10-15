@@ -80,8 +80,8 @@
 		6A13B7DA28FAD9F2008DA73F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				6A13B7D628FAD9D8008DA73F /* Benefit.swift */,
 				6A13B7D828FAD9E4008DA73F /* MyPoint.swift */,
+				6A13B7D628FAD9D8008DA73F /* Benefit.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
