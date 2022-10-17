@@ -18,7 +18,7 @@ class BenefitListViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    enum Section: Int {
+    enum Section: Int, CaseIterable{
         case mypoint
         case todayBenefit
         case otherBenefits
@@ -30,17 +30,31 @@ class BenefitListViewController: UIViewController {
     
     // MARK: - Snapshot에 사용될 각각의 items 배열 생성
     var myPointSectionItem: [AnyHashable] = MyPoint.myPoint
-    var todayBenefitSectionItems: [AnyHashable] = TodayBenefit.todayBenefit
+    var todayBenefitSectionItem: [AnyHashable] = TodayBenefit.todayBenefit
     var otherBenefitSectionItems: [AnyHashable] = OtherBenefits.otherBenefits
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // MARK: - dataSource 구현
+        // CollectionView
+        //  - Presentation, -> Cell을 어떻게 구성할지?
+        //  - Data,         -> 내용을 무엇으로 채울지?
+        //  - Layout        -> 내용이 채워진 Cell들을 어떻게 보여줄지?
+        
+        // MARK: - Presentation 구현
         dataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: collectionView, cellProvider: { [unowned self] collectionView, indexPath, item in
             guard let section = Section(rawValue: indexPath.section) else { return nil }
             let cell = self.configureCell(for: collectionView, section: section, item: item, indexPath: indexPath)
             return cell
         })
+        
+        // MARK: - Data 구현
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
+        snapshot.appendSections(Section.allCases)
+        snapshot.appendItems(myPointSectionItem, toSection: .mypoint)
+        snapshot.appendItems(todayBenefitSectionItem, toSection: .todayBenefit)
+        snapshot.appendItems(otherBenefitSectionItems, toSection: .otherBenefits)
+        dataSource.apply(snapshot)
+        
     }
     
     // MARK: - Section에 따라 셀 구현하는 메서드
