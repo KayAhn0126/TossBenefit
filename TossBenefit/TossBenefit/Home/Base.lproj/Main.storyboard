@@ -45,7 +45,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="399" height="251"/>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OtherBenefitsCell" id="HVw-Rd-O8x" customClass="OtherBenefitCell" customModule="TossBenefit" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OtherBenefitsCell" id="HVw-Rd-O8x" customClass="OtherBenefitsCell" customModule="TossBenefit" customModuleProvider="target">
                                         <rect key="frame" x="7.5" y="369" width="399" height="108"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="pwz-Vu-SYT">
