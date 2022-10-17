@@ -12,5 +12,7 @@ struct MyPoint: Hashable {
 }
 
 extension MyPoint {
+    static let myPoint: [MyPoint] = [.default]
+    
     static let `default` = MyPoint(point: 0)
 }

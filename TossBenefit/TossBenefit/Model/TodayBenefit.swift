@@ -17,8 +17,7 @@ struct TodayBenefit: Benefit {
 }
 
 extension TodayBenefit {
-    
-    static let today: TodayBenefit = .pressToGetMoney
+    static let todayBenefit: [TodayBenefit] = [.pressToGetMoney]
     
     static let pressToGetMoney = TodayBenefit(
         imageName: "ic_alarm",

@@ -17,9 +17,9 @@ struct OtherBenefits: Benefit {
 }
 
 extension OtherBenefits {
-    static let others: [OtherBenefits] = [.thisWeek, .walk, .brand, .tossPay, .quiz, .openChat, .rideTaxi, .card]
+    static let otherBenefits: [OtherBenefits] = [.thisWeek, .walk, .brand, .tossPay, .quiz, .openChat, .rideTaxi, .card]
     
-    // Other Benefit
+    // other Benefits
     static let thisWeek = OtherBenefits(
         imageName: "ic_alarm",
         title: "6500원 받기",
