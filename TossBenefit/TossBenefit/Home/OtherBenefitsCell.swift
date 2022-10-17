@@ -8,6 +8,6 @@
 // MARK: - 다른 나머지 혜택들을 보여줄 셀
 import UIKit
 
-class OtherBenefitCell: UICollectionViewCell {
+class OtherBenefitsCell: UICollectionViewCell {
     
 }
