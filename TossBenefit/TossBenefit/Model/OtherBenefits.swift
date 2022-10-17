@@ -1,5 +1,5 @@
 //
-//  OtherBenefit.swift
+//  OtherBenefits.swift
 //  TossBenefit
 //
 //  Created by Kay on 2022/10/16.

@@ -18,7 +18,7 @@ class BenefitListViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    enum Section {
+    enum Section: Int {
         case mypoint
         case todayBenefit
         case otherBenefits
@@ -35,9 +35,31 @@ class BenefitListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // MARK: - dataSource 구현
+        dataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: collectionView, cellProvider: { [unowned self] collectionView, indexPath, item in
+            guard let section = Section(rawValue: indexPath.section) else { return nil }
+            let cell = self.configureCell(for: collectionView, section: section, item: item, indexPath: indexPath)
+            return cell
+        })
     }
     
-    
+    // MARK: - Section에 따라 셀 구현하는 메서드
+    private func configureCell(for collectionView: UICollectionView, section: Section, item: Item, indexPath: IndexPath) -> UICollectionViewCell? {
+        switch section {
+        case .mypoint :
+            let myPointCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyPointCell", for: indexPath) as! MyPointCell
+            myPointCell.configure(item: item as! MyPoint)
+            return myPointCell
+        case .todayBenefit :
+            let todayBenefitCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TodayBenefit", for: indexPath) as! TodayBenefitCell
+            todayBenefitCell.configure(item: item as! TodayBenefit)
+            return todayBenefitCell
+        case .otherBenefits :
+            let otherBenefitsCell = collectionView.dequeueReusableCell(withReuseIdentifier: "OtherBenefits", for: indexPath) as! OtherBenefitsCell
+            otherBenefitsCell.configure(item: item as! OtherBenefits)
+            return otherBenefitsCell
+        }
+        
+    }
 }
 
