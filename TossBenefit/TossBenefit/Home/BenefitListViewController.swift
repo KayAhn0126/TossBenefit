@@ -19,8 +19,9 @@ class BenefitListViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     enum Section {
-        case today
-        case others
+        case mypoint
+        case todayBenefit
+        case otherBenefits
     }
     typealias Item = AnyHashable
     
