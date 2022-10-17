@@ -16,3 +16,17 @@
     
     var dataSource: UICollectionViewDiffableDataSource<Section, Item>!
 ```
+
+## 🍎 섹션이 여러개일때 각각의 데이터를 어떻게 구성 했는지
+
+
+## 🍎 실무에서는 FlowLayout이 더 많이 쓰인다는데 왜?
+- compositional layout이 더 다양하게 표현할 수 있는데 왜 FlowLayout?
+
+## 🍎 fractionWidth/Height, estimated 복기
+
+## 🍎 group/section spacing 차이점
+- group.interItemSpacing = .fixed(spacing)
+- interItemSpacing은 아이템간 간격
+- section.interGroupSpacing = spacing
+- interGroupSpacing은 그룹간 간격
