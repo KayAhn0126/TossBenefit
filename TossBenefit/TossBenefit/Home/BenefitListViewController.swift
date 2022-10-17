@@ -55,10 +55,6 @@ class BenefitListViewController: UIViewController {
         snapshot.appendItems(otherBenefitSectionItems, toSection: .otherBenefits)
         dataSource.apply(snapshot)
         
-        // MARK: - 내용으로 채워진 cell들을 어떻게 보여줄지 layout 메서드에서 구현
-        collectionView.collectionViewLayout = layout()
-        
-        navigationItem.title = "GG"
     }
     
     // MARK: - Section에 따라 셀 구현하는 메서드
@@ -69,31 +65,15 @@ class BenefitListViewController: UIViewController {
             myPointCell.configure(item: item as! MyPoint)
             return myPointCell
         case .todayBenefit :
-            let todayBenefitCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TodayBenefitCell", for: indexPath) as! TodayBenefitCell
+            let todayBenefitCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TodayBenefit", for: indexPath) as! TodayBenefitCell
             todayBenefitCell.configure(item: item as! TodayBenefit)
             return todayBenefitCell
         case .otherBenefits :
-            let otherBenefitsCell = collectionView.dequeueReusableCell(withReuseIdentifier: "OtherBenefitsCell", for: indexPath) as! OtherBenefitsCell
+            let otherBenefitsCell = collectionView.dequeueReusableCell(withReuseIdentifier: "OtherBenefits", for: indexPath) as! OtherBenefitsCell
             otherBenefitsCell.configure(item: item as! OtherBenefits)
             return otherBenefitsCell
         }
-    }
-    
-    private func layout() -> UICollectionViewCompositionalLayout {
-        let spacing: CGFloat = 10
         
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(60))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-    
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(60))
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
-        group.interItemSpacing = .fixed(10)
-        
-        let section = NSCollectionLayoutSection(group: group)
-        section.interGroupSpacing = spacing
-        section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 16, bottom: 0, trailing: 16)
-
-        return UICollectionViewCompositionalLayout(section: section)
     }
 }
 
