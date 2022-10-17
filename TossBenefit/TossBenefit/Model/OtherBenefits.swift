@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct OtherBenefit: Benefit{
+struct OtherBenefits: Benefit {
     var id = UUID()
     var imageName: String
     var title: String
@@ -16,11 +16,11 @@ struct OtherBenefit: Benefit{
     var type: String
 }
 
-extension OtherBenefit {
-    static let others: [OtherBenefit] = [.thisWeek, .walk, .brand, .tossPay, .quiz, .openChat, .rideTaxi, .card]
+extension OtherBenefits {
+    static let others: [OtherBenefits] = [.thisWeek, .walk, .brand, .tossPay, .quiz, .openChat, .rideTaxi, .card]
     
     // Other Benefit
-    static let thisWeek = OtherBenefit(
+    static let thisWeek = OtherBenefits(
         imageName: "ic_alarm",
         title: "6500원 받기",
         description: "이번주 미션을 받아보세요",
@@ -28,7 +28,7 @@ extension OtherBenefit {
         type: "thisWeek"
     )
     
-    static let walk = OtherBenefit(
+    static let walk = OtherBenefits(
         imageName: "ic_shoes",
         title: "10원 받기",
         description: "10걸음 걸었다면",
@@ -36,7 +36,7 @@ extension OtherBenefit {
         type: "walk"
     )
 
-    static let brand = OtherBenefit(
+    static let brand = OtherBenefits(
         imageName: "ic_heart",
         title: "브랜드 캐시백 받기",
         description: "좋아하는 브랜드에서",
@@ -44,7 +44,7 @@ extension OtherBenefit {
         type: "brand"
     )
     
-    static let tossPay = OtherBenefit(
+    static let tossPay = OtherBenefits(
         imageName: "ic_shoes",
         title: "할인, 캐시백 받기",
         description: "토스페이 결제할 때",
@@ -52,7 +52,7 @@ extension OtherBenefit {
         type: "tossPay"
     )
     
-    static let quiz = OtherBenefit(
+    static let quiz = OtherBenefits(
         imageName: "ic_alarm",
         title: "돈 상자 받기",
         description: "보험 퀴즈 풀고",
@@ -60,7 +60,7 @@ extension OtherBenefit {
         type: "quiz"
     )
     
-    static let openChat = OtherBenefit(
+    static let openChat = OtherBenefits(
         imageName: "ic_alarm",
         title: "최대 15,000원 받기",
         description: "오픈채팅방 운영하고",
@@ -68,7 +68,7 @@ extension OtherBenefit {
         type: "openChat"
     )
     
-    static let rideTaxi = OtherBenefit(
+    static let rideTaxi = OtherBenefits(
         imageName: "ic_shoes",
         title: "3,000원 받기",
         description: "택시 타고",
@@ -76,7 +76,7 @@ extension OtherBenefit {
         type: "rideTaxi"
     )
     
-    static let card = OtherBenefit(
+    static let card = OtherBenefits(
         imageName: "ic_heart",
         title: "100,000원 받기",
         description: "카드쓰고",
