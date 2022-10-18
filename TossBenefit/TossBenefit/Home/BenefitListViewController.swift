@@ -57,6 +57,7 @@ class BenefitListViewController: UIViewController {
         
         // MARK: - 내용으로 채워진 cell들을 어떻게 보여줄지 layout 메서드에서 구현
         collectionView.collectionViewLayout = layout()
+        collectionView.delegate = self
         
         navigationItem.title = "GG"
     }
@@ -94,6 +95,13 @@ class BenefitListViewController: UIViewController {
         section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 16, bottom: 0, trailing: 16)
         
         return UICollectionViewCompositionalLayout(section: section)
+    }
+}
+
+extension BenefitListViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = dataSource.itemIdentifier(for: indexPath)
+        print("---> \(item)")
     }
 }
 
