@@ -27,7 +27,7 @@ var dataSource: UICollectionViewDiffableDataSource<Section, Item>!
 
 ```
 
-## 🍎 섹션이 여러개일때 각각의 데이터를 어떻게 구성 했는지
+## 🍎 섹션이 여러개일때 각각의 데이터를 어떻게 구성 했는지~
 
 ## 🍎 실무에서는 FlowLayout이 더 많이 쓰인다는데 왜?
 
@@ -41,3 +41,6 @@ var dataSource: UICollectionViewDiffableDataSource<Section, Item>!
 - interItemSpacing은 아이템간 간격
 - section.interGroupSpacing = spacing
 - interGroupSpacing은 그룹간 간격
+- 왜 둘은 넣는 값이 다른가?
+
+## 🍎 TodayBenefitCell에서 클릭하기 버튼의 ContentInSet 적용 전, 후 알아보기.
