@@ -69,6 +69,11 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="399" height="120"/>
+                                        <connections>
+                                            <outlet property="currentPointLabel" destination="gdu-Se-XsN" id="t2B-sE-NqT"/>
+                                            <outlet property="descriptionLabel" destination="KKF-NO-AUF" id="wZA-HO-WwQ"/>
+                                            <outlet property="myPointImage" destination="Qka-A3-qcj" id="gSJ-iH-JaY"/>
+                                        </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TodayBenefitCell" id="Fj1-Lq-eGK" customClass="TodayBenefitCell" customModule="TossBenefit" customModuleProvider="target">
                                         <rect key="frame" x="7.5" y="130" width="399" height="250"/>
