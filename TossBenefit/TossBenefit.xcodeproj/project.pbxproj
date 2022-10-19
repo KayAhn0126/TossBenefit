@@ -22,8 +22,8 @@
 		6A13B7E928FC0687008DA73F /* OtherBenefits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A13B7E828FC0687008DA73F /* OtherBenefits.swift */; };
 		6A13B7EE28FFC783008DA73F /* MyPointDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A13B7ED28FFC783008DA73F /* MyPointDetail.storyboard */; };
 		6A13B7F028FFC7A8008DA73F /* MyPointDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A13B7EF28FFC7A8008DA73F /* MyPointDetailViewController.swift */; };
-		6A13B7F729000854008DA73F /* OtherBenefitsDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A13B7F629000854008DA73F /* OtherBenefitsDetail.storyboard */; };
-		6A13B7F92900086C008DA73F /* OtherBenefitsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A13B7F82900086C008DA73F /* OtherBenefitsDetailViewController.swift */; };
+		6A13B7F729000854008DA73F /* TodayBenefitDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A13B7F629000854008DA73F /* TodayBenefitDetail.storyboard */; };
+		6A13B7F92900086C008DA73F /* TodayBenefitDetailDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A13B7F82900086C008DA73F /* TodayBenefitDetailDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,8 +44,8 @@
 		6A13B7E828FC0687008DA73F /* OtherBenefits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherBenefits.swift; sourceTree = "<group>"; };
 		6A13B7ED28FFC783008DA73F /* MyPointDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPointDetail.storyboard; sourceTree = "<group>"; };
 		6A13B7EF28FFC7A8008DA73F /* MyPointDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPointDetailViewController.swift; sourceTree = "<group>"; };
-		6A13B7F629000854008DA73F /* OtherBenefitsDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OtherBenefitsDetail.storyboard; sourceTree = "<group>"; };
-		6A13B7F82900086C008DA73F /* OtherBenefitsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherBenefitsDetailViewController.swift; sourceTree = "<group>"; };
+		6A13B7F629000854008DA73F /* TodayBenefitDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TodayBenefitDetail.storyboard; sourceTree = "<group>"; };
+		6A13B7F82900086C008DA73F /* TodayBenefitDetailDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayBenefitDetailDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +87,7 @@
 				6A13B7CD28FAD397008DA73F /* LaunchScreen.storyboard */,
 				6A13B7D028FAD397008DA73F /* Info.plist */,
 				6A13B7F128FFC7AF008DA73F /* MyPointDetail */,
-				6A13B7FA29000F1F008DA73F /* OtherBenefitsDetail */,
+				6A13B7FA29000F1F008DA73F /* TodayBenefitDetail */,
 			);
 			path = TossBenefit;
 			sourceTree = "<group>";
@@ -131,13 +131,13 @@
 			path = MyPointDetail;
 			sourceTree = "<group>";
 		};
-		6A13B7FA29000F1F008DA73F /* OtherBenefitsDetail */ = {
+		6A13B7FA29000F1F008DA73F /* TodayBenefitDetail */ = {
 			isa = PBXGroup;
 			children = (
-				6A13B7F629000854008DA73F /* OtherBenefitsDetail.storyboard */,
-				6A13B7F82900086C008DA73F /* OtherBenefitsDetailViewController.swift */,
+				6A13B7F629000854008DA73F /* TodayBenefitDetail.storyboard */,
+				6A13B7F82900086C008DA73F /* TodayBenefitDetailDetailViewController.swift */,
 			);
-			path = OtherBenefitsDetail;
+			path = TodayBenefitDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,7 +202,7 @@
 				6A13B7CC28FAD397008DA73F /* Assets.xcassets in Resources */,
 				6A13B7EE28FFC783008DA73F /* MyPointDetail.storyboard in Resources */,
 				6A13B7CA28FAD396008DA73F /* Main.storyboard in Resources */,
-				6A13B7F729000854008DA73F /* OtherBenefitsDetail.storyboard in Resources */,
+				6A13B7F729000854008DA73F /* TodayBenefitDetail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,7 +219,7 @@
 				6A13B7C728FAD396008DA73F /* BenefitListViewController.swift in Sources */,
 				6A13B7F028FFC7A8008DA73F /* MyPointDetailViewController.swift in Sources */,
 				6A13B7D728FAD9D8008DA73F /* Benefit+Protocol.swift in Sources */,
-				6A13B7F92900086C008DA73F /* OtherBenefitsDetailViewController.swift in Sources */,
+				6A13B7F92900086C008DA73F /* TodayBenefitDetailDetailViewController.swift in Sources */,
 				6A13B7DF28FAF83B008DA73F /* TodayBenefitCell.swift in Sources */,
 				6A13B7C328FAD396008DA73F /* AppDelegate.swift in Sources */,
 				6A13B7DD28FAF828008DA73F /* MyPointCell.swift in Sources */,
