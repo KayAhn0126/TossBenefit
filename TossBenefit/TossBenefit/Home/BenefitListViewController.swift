@@ -105,7 +105,7 @@ extension BenefitListViewController: UICollectionViewDelegate {
         
         if let myPoint = item as? MyPoint {
             let myPointDetailStoryBoard = UIStoryboard(name: "MyPointDetail", bundle: nil)
-            let vc = myPointDetailStoryBoard.instantiateViewController(withIdentifier: "MyPointViewController") as! MyPointViewController
+            let vc = myPointDetailStoryBoard.instantiateViewController(withIdentifier: "MyPointDetailViewController") as! MyPointDetailViewController
             vc.point = myPoint
             navigationController?.pushViewController(vc, animated: true)
         }
