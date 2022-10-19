@@ -59,7 +59,7 @@ class BenefitListViewController: UIViewController {
         collectionView.collectionViewLayout = layout()
         collectionView.delegate = self
         
-        navigationItem.title = "GG"
+        navigationItem.title = "혜택"
     }
     
     // MARK: - Section에 따라 셀 구현하는 메서드
@@ -102,6 +102,13 @@ extension BenefitListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let item = dataSource.itemIdentifier(for: indexPath)
         print("---> \(item)")
+        
+        if let myPoint = item as? MyPoint {
+            let myPointDetailStoryBoard = UIStoryboard(name: "MyPointDetail", bundle: nil)
+            let vc = myPointDetailStoryBoard.instantiateViewController(withIdentifier: "MyPointViewController") as! MyPointViewController
+            vc.point = myPoint
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
 
