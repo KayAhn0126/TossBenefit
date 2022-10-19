@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyPointViewController: UIViewController {
+class MyPointDetailViewController: UIViewController {
 
     @IBOutlet weak var pointLabel: UILabel!
     
