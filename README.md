@@ -43,4 +43,9 @@ var dataSource: UICollectionViewDiffableDataSource<Section, Item>!
 - interGroupSpacing은 그룹간 간격
 - 왜 둘은 넣는 값이 다른가?
 
-## 🍎 TodayBenefitCell에서 클릭하기 버튼의 ContentInSet 적용 전, 후 알아보기.
+## 🍎 TodayBenefitCell에서 "클릭하기" 버튼의 ContentInSet 적용 전, 후 알아보기.
+
+## 🍎 TodayBenefitCell에서 layer.maskToBounds란 무엇인가?
+
+## 🍎 TodayBenefitCell에서 ContentView에 alphaComponent란 무엇인가?
+- 투명도 조절.
