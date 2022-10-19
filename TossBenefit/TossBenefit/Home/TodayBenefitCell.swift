@@ -17,8 +17,12 @@ class TodayBenefitCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        cellContentView.backgroundColor = .opaqueSeparator
+        
+        // cellContentView.backgroundColor = .opaqueSeparator -> 기존 방식
+        cellContentView.backgroundColor = .systemGray.withAlphaComponent(0.3)
         cellContentView.layer.cornerRadius = 10
+        
+        todayBenefitButton.layer.masksToBounds = true
         todayBenefitButton.layer.cornerRadius = 10
     }
     
