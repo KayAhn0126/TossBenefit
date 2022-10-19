@@ -10,7 +10,21 @@ import UIKit
 
 class TodayBenefitCell: UICollectionViewCell {
     
+    @IBOutlet weak var cellContentView: UIView!
+    @IBOutlet weak var todayBenefitImage: UIImageView!
+    @IBOutlet weak var todayBenefitLabel: UILabel!
+    @IBOutlet weak var todayBenefitButton: UIButton!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        cellContentView.backgroundColor = .opaqueSeparator
+        cellContentView.layer.cornerRadius = 10
+        todayBenefitButton.layer.cornerRadius = 10
+    }
+    
     func configure(item: TodayBenefit) {
-        
+        todayBenefitImage.image = UIImage(systemName: "sparkles")?.withRenderingMode(.alwaysOriginal)
+        todayBenefitLabel.text = item.title
+        todayBenefitButton.setTitle(item.ctaTitle, for: .normal)
     }
 }

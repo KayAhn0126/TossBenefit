@@ -118,6 +118,12 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="399" height="250"/>
+                                        <connections>
+                                            <outlet property="cellContentView" destination="xeQ-IT-7AS" id="h21-mi-8NT"/>
+                                            <outlet property="todayBenefitButton" destination="7wt-KE-bfs" id="cvE-rf-xzT"/>
+                                            <outlet property="todayBenefitImage" destination="nEw-PJ-MGe" id="doG-Ki-XML"/>
+                                            <outlet property="todayBenefitLabel" destination="dNd-55-8g5" id="KPS-zU-VOh"/>
+                                        </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OtherBenefitsCell" id="HVw-Rd-O8x" customClass="OtherBenefitsCell" customModule="TossBenefit" customModuleProvider="target">
                                         <rect key="frame" x="7.5" y="390" width="399" height="120"/>
