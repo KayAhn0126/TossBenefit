@@ -165,6 +165,11 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="399" height="120"/>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="xFC-Yl-h96" id="wXv-gm-Ekw"/>
+                                            <outlet property="getPointLabel" destination="Iux-7y-rgO" id="cqp-qj-u73"/>
+                                            <outlet property="otherBenefitsImage" destination="4nY-IA-KRx" id="l8G-Fh-1Gr"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
