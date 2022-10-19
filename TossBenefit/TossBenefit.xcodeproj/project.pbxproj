@@ -86,7 +86,7 @@
 				6A13B7CB28FAD397008DA73F /* Assets.xcassets */,
 				6A13B7CD28FAD397008DA73F /* LaunchScreen.storyboard */,
 				6A13B7D028FAD397008DA73F /* Info.plist */,
-				6A13B7F128FFC7AF008DA73F /* MyPoint */,
+				6A13B7F128FFC7AF008DA73F /* MyPointDetail */,
 				6A13B7FA29000F1F008DA73F /* OtherBenefitsDetail */,
 			);
 			path = TossBenefit;
@@ -122,13 +122,12 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
-		6A13B7F128FFC7AF008DA73F /* MyPoint */ = {
+		6A13B7F128FFC7AF008DA73F /* MyPointDetail */ = {
 			isa = PBXGroup;
 			children = (
 				6A13B7ED28FFC783008DA73F /* MyPointDetail.storyboard */,
 				6A13B7EF28FFC7A8008DA73F /* MyPointDetailViewController.swift */,
 			);
-			name = MyPoint;
 			path = MyPointDetail;
 			sourceTree = "<group>";
 		};
