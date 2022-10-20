@@ -88,6 +88,9 @@
                             <constraint firstItem="NUL-PF-fae" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="yCU-ne-K4n"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="todayBenefitButton" destination="Fos-9p-2Sm" id="tMq-RT-Umh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
