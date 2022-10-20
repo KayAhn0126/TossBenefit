@@ -10,12 +10,24 @@ import UIKit
 class TodayBenefitDetailViewController: UIViewController {
 
     @IBOutlet weak var todayBenefitButton: UIButton!
-    var todayBenefit: TodayBenefit = .pressToGetMoney
+    
+    var todayBenefit: TodayBenefit? = nil
+    var otherBenefit: OtherBenefits? = nil
+    var todayDetail: BenefitDetails = .default
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.largeTitleDisplayMode = .never
         todayBenefitButton.layer.masksToBounds = true
         todayBenefitButton.layer.cornerRadius = 5
+        
+        let currentCTATitle: String
+        if otherBenefit == nil {
+            currentCTATitle = todayBenefit!.ctaTitle
+        } else {
+            currentCTATitle = otherBenefit!.ctaTitle
+        }
+        todayBenefitButton.setTitle(currentCTATitle, for: .normal)
     }
 }
