@@ -101,7 +101,6 @@ class BenefitListViewController: UIViewController {
 extension BenefitListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let item = dataSource.itemIdentifier(for: indexPath)
-        print("---> \(item)")
         
         if let myPoint = item as? MyPoint {
             let myPointDetailStoryBoard = UIStoryboard(name: "MyPointDetail", bundle: nil)
@@ -109,13 +108,13 @@ extension BenefitListViewController: UICollectionViewDelegate {
             vc.point = myPoint
             navigationController?.pushViewController(vc, animated: true)
         } else if let todayBenefit = item as? TodayBenefit {
-            let todayBenefitStoryBoard = UIStoryboard(name: "TodayBenefitDetail", bundle: nil)
-            let vc = todayBenefitStoryBoard.instantiateViewController(withIdentifier: "TodayBenefitDetailViewController") as! TodayBenefitDetailViewController
+            let todayBenefitStoryBoard = UIStoryboard(name: "BenefitsDetail", bundle: nil)
+            let vc = todayBenefitStoryBoard.instantiateViewController(withIdentifier: "BenefitsDetailViewController") as! BenefitsDetailViewController
             vc.todayBenefit = todayBenefit
             navigationController?.pushViewController(vc, animated: true)
         } else if let otherBenefits = item as? OtherBenefits {
-            let todayBenefitStoryBoard = UIStoryboard(name: "TodayBenefitDetail", bundle: nil)
-            let vc = todayBenefitStoryBoard.instantiateViewController(withIdentifier: "TodayBenefitDetailViewController") as! TodayBenefitDetailViewController
+            let otherBenefitStoryBoard = UIStoryboard(name: "BenefitsDetail", bundle: nil)
+            let vc = otherBenefitStoryBoard.instantiateViewController(withIdentifier: "BenefitsDetailViewController") as! BenefitsDetailViewController
             vc.otherBenefit = otherBenefits
             navigationController?.pushViewController(vc, animated: true)
         }

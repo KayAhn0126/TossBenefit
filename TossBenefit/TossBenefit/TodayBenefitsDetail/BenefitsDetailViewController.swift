@@ -1,5 +1,5 @@
 //
-//  TodayBenefitDetailViewController.swift
+//  BenefitsDetailViewController.swift
 //  TossBenefit
 //
 //  Created by Kay on 2022/10/19.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TodayBenefitDetailViewController: UIViewController {
+class BenefitsDetailViewController: UIViewController {
 
     @IBOutlet weak var todayBenefitButton: UIButton!
     
