@@ -17,7 +17,7 @@ typealias Item = Hashable
 
 ![](https://i.imgur.com/cXr7jiU.png)
 
-- 일단 현재 Hashable이 쓰여있는 자리에는 프로토콜타입이 아닌 구현체가 들어가야한다. Hashable보다 더 큰 범위의 AnyHashable(구조체)를 사용했다.
+- 일단 현재 Hashable이 쓰여있는 자리에는 프로토콜 타입이 아닌 구현체가 들어가야한다. Hashable보다 더 큰 범위의 AnyHashable(구조체)를 사용했다.
 
 ```swift
 

@@ -23,6 +23,7 @@ final class BenefitsGuideView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setUp()
     }
     
     required init?(coder: NSCoder) {
@@ -43,9 +44,6 @@ final class BenefitsGuideView: UIView {
         NSLayoutConstraint.activate([
             title.leadingAnchor.constraint(equalTo: icon.trailingAnchor, constant: 20),
             title.centerYAnchor.constraint(equalTo: icon.centerYAnchor),
-            
         ])
     }
-    
-    
 }

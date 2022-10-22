@@ -90,6 +90,7 @@
                     </view>
                     <connections>
                         <outlet property="todayBenefitButton" destination="Fos-9p-2Sm" id="tMq-RT-Umh"/>
+                        <outlet property="vStackView" destination="NUL-PF-fae" id="42V-fu-R5y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
