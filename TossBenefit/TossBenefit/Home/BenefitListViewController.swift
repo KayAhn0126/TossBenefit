@@ -98,6 +98,7 @@ class BenefitListViewController: UIViewController {
     }
 }
 
+// MARK: - cell이 선택이 되었을때 실행되는 메서드
 extension BenefitListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let item = dataSource.itemIdentifier(for: indexPath)
