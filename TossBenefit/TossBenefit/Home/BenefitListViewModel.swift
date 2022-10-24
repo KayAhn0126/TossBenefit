@@ -6,11 +6,18 @@
 //
 
 import Foundation
+import Combine
 
 final class BenefitListViewModel {
     var myPointSectionItem: [AnyHashable]
+    // for Output -> Data
     @Published var todayBenefitSectionItem: [AnyHashable] = []
     @Published var otherBenefitSectionItems: [AnyHashable] = []
+    
+    // for Input -> UserInteraction
+    var pointDidTapped = PassthroughSubject<MyPoint, Never>()
+    var todayDidTapped = PassthroughSubject<TodayBenefit, Never>()
+    var otherDidTapped = PassthroughSubject<OtherBenefits, Never>()
     
     init(myPoint: [AnyHashable]) {
         self.myPointSectionItem = myPoint

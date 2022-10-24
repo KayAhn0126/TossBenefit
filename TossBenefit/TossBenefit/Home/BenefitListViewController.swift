@@ -74,6 +74,7 @@ class BenefitListViewController: UIViewController {
     }
     
     private func bind() {
+        // Output -> Data
         viewModel.$todayBenefitSectionItem
             .receive(on: RunLoop.main)
             .sink { items in
@@ -84,6 +85,34 @@ class BenefitListViewController: UIViewController {
             .receive(on: RunLoop.main)
             .sink { items in
                 self.applySnapShot(items: items, section: .otherBenefits)
+            }.store(in: &subscriptions)
+        
+        // Input -> User Interaction
+        viewModel.pointDidTapped
+            .receive(on: RunLoop.main)
+            .sink { [unowned self] point in
+                let myPointDetailStoryBoard = UIStoryboard(name: "MyPointDetail", bundle: nil)
+                let vc = myPointDetailStoryBoard.instantiateViewController(withIdentifier: "MyPointDetailViewController") as! MyPointDetailViewController
+                vc.point = point
+                self.navigationController?.pushViewController(vc, animated: true)
+            }.store(in: &subscriptions)
+        
+        viewModel.todayDidTapped
+            .receive(on: RunLoop.main)
+            .sink { [unowned self] todayBenefit in
+                let todayBenefitStoryBoard = UIStoryboard(name: "BenefitsDetail", bundle: nil)
+                let vc = todayBenefitStoryBoard.instantiateViewController(withIdentifier: "BenefitsDetailViewController") as! BenefitsDetailViewController
+                vc.todayBenefit = todayBenefit
+                self.navigationController?.pushViewController(vc, animated: true)
+            }.store(in: &subscriptions)
+        
+        viewModel.otherDidTapped
+            .receive(on: RunLoop.main)
+            .sink { [unowned self] otherBenefits in
+                let otherBenefitStoryBoard = UIStoryboard(name: "BenefitsDetail", bundle: nil)
+                let vc = otherBenefitStoryBoard.instantiateViewController(withIdentifier: "BenefitsDetailViewController") as! BenefitsDetailViewController
+                vc.otherBenefits = otherBenefits
+                self.navigationController?.pushViewController(vc, animated: true)
             }.store(in: &subscriptions)
     }
     
@@ -135,20 +164,11 @@ extension BenefitListViewController: UICollectionViewDelegate {
         let item = dataSource.itemIdentifier(for: indexPath)
         
         if let myPoint = item as? MyPoint {
-            let myPointDetailStoryBoard = UIStoryboard(name: "MyPointDetail", bundle: nil)
-            let vc = myPointDetailStoryBoard.instantiateViewController(withIdentifier: "MyPointDetailViewController") as! MyPointDetailViewController
-            vc.point = myPoint
-            navigationController?.pushViewController(vc, animated: true)
+            viewModel.pointDidTapped.send(myPoint)
         } else if let todayBenefit = item as? TodayBenefit {
-            let todayBenefitStoryBoard = UIStoryboard(name: "BenefitsDetail", bundle: nil)
-            let vc = todayBenefitStoryBoard.instantiateViewController(withIdentifier: "BenefitsDetailViewController") as! BenefitsDetailViewController
-            vc.todayBenefit = todayBenefit
-            navigationController?.pushViewController(vc, animated: true)
+            viewModel.todayDidTapped.send(todayBenefit)
         } else if let otherBenefits = item as? OtherBenefits {
-            let otherBenefitStoryBoard = UIStoryboard(name: "BenefitsDetail", bundle: nil)
-            let vc = otherBenefitStoryBoard.instantiateViewController(withIdentifier: "BenefitsDetailViewController") as! BenefitsDetailViewController
-            vc.otherBenefits = otherBenefits
-            navigationController?.pushViewController(vc, animated: true)
+            viewModel.otherDidTapped.send(otherBenefits)
         }
     }
 }
