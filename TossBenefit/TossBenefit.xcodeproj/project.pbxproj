@@ -86,10 +86,11 @@
 		6A13B7C128FAD396008DA73F /* TossBenefit */ = {
 			isa = PBXGroup;
 			children = (
+				6AC9971629069C5C0093546D /* ViewModel */,
 				6AC9971529069B960093546D /* Cell */,
 				6A13B7EA28FC06A6008DA73F /* Protocol */,
 				6A13B7DA28FAD9F2008DA73F /* Model */,
-				6A13B7DB28FADA01008DA73F /* Home */,
+				6A13B7DB28FADA01008DA73F /* View */,
 				6A13B7C228FAD396008DA73F /* AppDelegate.swift */,
 				6A13B7C428FAD396008DA73F /* SceneDelegate.swift */,
 				6A13B7CB28FAD397008DA73F /* Assets.xcassets */,
@@ -112,14 +113,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		6A13B7DB28FADA01008DA73F /* Home */ = {
+		6A13B7DB28FADA01008DA73F /* View */ = {
 			isa = PBXGroup;
 			children = (
 				6A13B7C828FAD396008DA73F /* Main.storyboard */,
 				6A13B7C628FAD396008DA73F /* BenefitListViewController.swift */,
-				6AC9970F2906649D0093546D /* BenefitListViewModel.swift */,
 			);
-			path = Home;
+			path = View;
 			sourceTree = "<group>";
 		};
 		6A13B7EA28FC06A6008DA73F /* Protocol */ = {
@@ -135,7 +135,6 @@
 			children = (
 				6A13B7ED28FFC783008DA73F /* MyPointDetail.storyboard */,
 				6A13B7EF28FFC7A8008DA73F /* MyPointDetailViewController.swift */,
-				6AC997132906844E0093546D /* MyPointDetailViewModel.swift */,
 			);
 			path = MyPointDetail;
 			sourceTree = "<group>";
@@ -159,6 +158,15 @@
 				6A13B7E028FAF84D008DA73F /* OtherBenefitsCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		6AC9971629069C5C0093546D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6AC9970F2906649D0093546D /* BenefitListViewModel.swift */,
+				6AC997132906844E0093546D /* MyPointDetailViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
