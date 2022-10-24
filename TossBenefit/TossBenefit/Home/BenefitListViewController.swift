@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class BenefitListViewController: UIViewController {
     
@@ -30,8 +31,9 @@ class BenefitListViewController: UIViewController {
     
     // MARK: - Snapshot에 사용될 각각의 items 배열 생성
     var myPointSectionItem: [AnyHashable] = MyPoint.myPoint
-    var todayBenefitSectionItem: [AnyHashable] = TodayBenefit.todayBenefit
-    var otherBenefitSectionItems: [AnyHashable] = OtherBenefits.otherBenefits
+    @Published var todayBenefitSectionItem: [AnyHashable] = []
+    @Published var otherBenefitSectionItems: [AnyHashable] = []
+    var subscriptions = Set<AnyCancellable>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +42,13 @@ class BenefitListViewController: UIViewController {
         //  - Data,         -> 내용을 무엇으로 채울지?
         //  - Layout        -> 내용이 채워진 Cell들을 어떻게 보여줄지?
         
+        configureCollectionView()
+        setupUI()
+        bind()
+        sendingData()
+    }
+    
+    private func configureCollectionView() {
         // MARK: - Presentation 구현
         dataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: collectionView, cellProvider: { [unowned self] collectionView, indexPath, item in
             guard let section = Section(rawValue: indexPath.section) else { return nil }
@@ -58,8 +67,40 @@ class BenefitListViewController: UIViewController {
         // MARK: - 내용으로 채워진 cell들을 어떻게 보여줄지 layout 메서드에서 구현
         collectionView.collectionViewLayout = layout()
         collectionView.delegate = self
-        
+    }
+    
+    private func setupUI() {
         navigationItem.title = "혜택"
+    }
+    
+    private func bind() {
+        $todayBenefitSectionItem
+            .receive(on: RunLoop.main)
+            .sink { items in
+                self.applySnapShot(items: items, section: .todayBenefit)
+            }.store(in: &subscriptions)
+        
+        $otherBenefitSectionItems
+            .receive(on: RunLoop.main)
+            .sink { items in
+                self.applySnapShot(items: items, section: .otherBenefits)
+            }.store(in: &subscriptions)
+    }
+    
+    private func sendingData() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.todayBenefitSectionItem = TodayBenefit.todayBenefit
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+            self.otherBenefitSectionItems = OtherBenefits.otherBenefits
+        }
+    }
+    
+    private func applySnapShot(items: [Item], section: Section) {
+        var snapshot = dataSource.snapshot()
+        snapshot.appendItems(items, toSection: section)
+        dataSource.apply(snapshot)
     }
     
     // MARK: - Section에 따라 셀 구현하는 메서드
