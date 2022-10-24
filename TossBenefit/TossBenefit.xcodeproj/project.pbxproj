@@ -86,6 +86,7 @@
 		6A13B7C128FAD396008DA73F /* TossBenefit */ = {
 			isa = PBXGroup;
 			children = (
+				6AC9971529069B960093546D /* Cell */,
 				6A13B7EA28FC06A6008DA73F /* Protocol */,
 				6A13B7DA28FAD9F2008DA73F /* Model */,
 				6A13B7DB28FADA01008DA73F /* Home */,
@@ -117,9 +118,6 @@
 				6A13B7C828FAD396008DA73F /* Main.storyboard */,
 				6A13B7C628FAD396008DA73F /* BenefitListViewController.swift */,
 				6AC9970F2906649D0093546D /* BenefitListViewModel.swift */,
-				6A13B7DC28FAF828008DA73F /* MyPointCell.swift */,
-				6A13B7DE28FAF83B008DA73F /* TodayBenefitCell.swift */,
-				6A13B7E028FAF84D008DA73F /* OtherBenefitsCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -151,6 +149,16 @@
 			);
 			name = BenefitsDetail;
 			path = TodayBenefitsDetail;
+			sourceTree = "<group>";
+		};
+		6AC9971529069B960093546D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6A13B7DC28FAF828008DA73F /* MyPointCell.swift */,
+				6A13B7DE28FAF83B008DA73F /* TodayBenefitCell.swift */,
+				6A13B7E028FAF84D008DA73F /* OtherBenefitsCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
