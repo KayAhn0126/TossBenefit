@@ -30,13 +30,13 @@ class BenefitListViewController: UIViewController {
     var dataSource: UICollectionViewDiffableDataSource<Section, Item>!
     
     // MARK: - Snapshot에 사용될 각각의 items 배열 생성
-    var myPointSectionItem: [AnyHashable] = MyPoint.myPoint
-    @Published var todayBenefitSectionItem: [AnyHashable] = []
-    @Published var otherBenefitSectionItems: [AnyHashable] = []
     var subscriptions = Set<AnyCancellable>()
+    
+    var viewModel: BenefitListViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = BenefitListViewModel(myPoint: MyPoint.myPoint)
         // CollectionView
         //  - Presentation, -> Cell을 어떻게 구성할지?
         //  - Data,         -> 내용을 무엇으로 채울지?
@@ -45,7 +45,7 @@ class BenefitListViewController: UIViewController {
         configureCollectionView()
         setupUI()
         bind()
-        sendingData()
+        viewModel.fetchData()
     }
     
     private func configureCollectionView() {
@@ -59,9 +59,9 @@ class BenefitListViewController: UIViewController {
         // MARK: - Data 구현
         var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
         snapshot.appendSections(Section.allCases)
-        snapshot.appendItems(myPointSectionItem, toSection: .mypoint)
-        snapshot.appendItems(todayBenefitSectionItem, toSection: .todayBenefit)
-        snapshot.appendItems(otherBenefitSectionItems, toSection: .otherBenefits)
+        snapshot.appendItems(viewModel.myPointSectionItem, toSection: .mypoint)
+        snapshot.appendItems([], toSection: .todayBenefit)
+        snapshot.appendItems([], toSection: .otherBenefits)
         dataSource.apply(snapshot)
         
         // MARK: - 내용으로 채워진 cell들을 어떻게 보여줄지 layout 메서드에서 구현
@@ -74,27 +74,17 @@ class BenefitListViewController: UIViewController {
     }
     
     private func bind() {
-        $todayBenefitSectionItem
+        viewModel.$todayBenefitSectionItem
             .receive(on: RunLoop.main)
             .sink { items in
                 self.applySnapShot(items: items, section: .todayBenefit)
             }.store(in: &subscriptions)
         
-        $otherBenefitSectionItems
+        viewModel.$otherBenefitSectionItems
             .receive(on: RunLoop.main)
             .sink { items in
                 self.applySnapShot(items: items, section: .otherBenefits)
             }.store(in: &subscriptions)
-    }
-    
-    private func sendingData() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.todayBenefitSectionItem = TodayBenefit.todayBenefit
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-            self.otherBenefitSectionItems = OtherBenefits.otherBenefits
-        }
     }
     
     private func applySnapShot(items: [Item], section: Section) {

@@ -26,6 +26,7 @@
 		6A13B7F92900086C008DA73F /* BenefitsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A13B7F82900086C008DA73F /* BenefitsDetailViewController.swift */; };
 		6A13B7FC29010392008DA73F /* BenefitDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A13B7FB29010392008DA73F /* BenefitDetails.swift */; };
 		6A13B7FE29018B6E008DA73F /* BenefitsGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A13B7FD29018B6E008DA73F /* BenefitsGuideView.swift */; };
+		6AC997102906649D0093546D /* BenefitListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC9970F2906649D0093546D /* BenefitListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		6A13B7F82900086C008DA73F /* BenefitsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitsDetailViewController.swift; sourceTree = "<group>"; };
 		6A13B7FB29010392008DA73F /* BenefitDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitDetails.swift; sourceTree = "<group>"; };
 		6A13B7FD29018B6E008DA73F /* BenefitsGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitsGuideView.swift; sourceTree = "<group>"; };
+		6AC9970F2906649D0093546D /* BenefitListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			children = (
 				6A13B7C828FAD396008DA73F /* Main.storyboard */,
 				6A13B7C628FAD396008DA73F /* BenefitListViewController.swift */,
+				6AC9970F2906649D0093546D /* BenefitListViewModel.swift */,
 				6A13B7DC28FAF828008DA73F /* MyPointCell.swift */,
 				6A13B7DE28FAF83B008DA73F /* TodayBenefitCell.swift */,
 				6A13B7E028FAF84D008DA73F /* OtherBenefitsCell.swift */,
@@ -224,6 +227,7 @@
 				6A13B7D928FAD9E4008DA73F /* MyPoint.swift in Sources */,
 				6A13B7E128FAF84D008DA73F /* OtherBenefitsCell.swift in Sources */,
 				6A13B7FC29010392008DA73F /* BenefitDetails.swift in Sources */,
+				6AC997102906649D0093546D /* BenefitListViewModel.swift in Sources */,
 				6A13B7C728FAD396008DA73F /* BenefitListViewController.swift in Sources */,
 				6A13B7F028FFC7A8008DA73F /* MyPointDetailViewController.swift in Sources */,
 				6A13B7D728FAD9D8008DA73F /* Benefit+Protocol.swift in Sources */,
