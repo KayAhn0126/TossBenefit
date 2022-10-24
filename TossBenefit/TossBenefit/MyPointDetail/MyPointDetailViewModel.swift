@@ -6,3 +6,12 @@
 //
 
 import Foundation
+import Combine
+
+final class MyPointDetailViewModel {
+    @Published var point: MyPoint
+    
+    init(point: MyPoint) {
+        self.point = point
+    }
+}

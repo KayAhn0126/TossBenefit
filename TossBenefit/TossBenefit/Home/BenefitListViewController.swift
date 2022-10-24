@@ -93,7 +93,7 @@ class BenefitListViewController: UIViewController {
             .sink { [unowned self] point in
                 let myPointDetailStoryBoard = UIStoryboard(name: "MyPointDetail", bundle: nil)
                 let vc = myPointDetailStoryBoard.instantiateViewController(withIdentifier: "MyPointDetailViewController") as! MyPointDetailViewController
-                vc.point = point
+                vc.viewModel = MyPointDetailViewModel(point: point)
                 self.navigationController?.pushViewController(vc, animated: true)
             }.store(in: &subscriptions)
         
