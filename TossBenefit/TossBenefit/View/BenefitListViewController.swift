@@ -102,7 +102,7 @@ class BenefitListViewController: UIViewController {
             .sink { [unowned self] todayBenefit in
                 let todayBenefitStoryBoard = UIStoryboard(name: "BenefitsDetail", bundle: nil)
                 let vc = todayBenefitStoryBoard.instantiateViewController(withIdentifier: "BenefitsDetailViewController") as! BenefitsDetailViewController
-                vc.todayBenefit = todayBenefit
+                vc.viewModel = BenefitsDetailViewModel(unknownBenefit: todayBenefit)
                 self.navigationController?.pushViewController(vc, animated: true)
             }.store(in: &subscriptions)
         
@@ -111,7 +111,7 @@ class BenefitListViewController: UIViewController {
             .sink { [unowned self] otherBenefits in
                 let otherBenefitStoryBoard = UIStoryboard(name: "BenefitsDetail", bundle: nil)
                 let vc = otherBenefitStoryBoard.instantiateViewController(withIdentifier: "BenefitsDetailViewController") as! BenefitsDetailViewController
-                vc.otherBenefits = otherBenefits
+                vc.viewModel = BenefitsDetailViewModel(unknownBenefit: otherBenefits)
                 self.navigationController?.pushViewController(vc, animated: true)
             }.store(in: &subscriptions)
     }
