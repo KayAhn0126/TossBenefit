@@ -1,30 +1,26 @@
 # TossBenefit
+## 🍎 작동 화면
+| 로딩 화면 | 작동 화면 |
+| :-: | :-: |
+| ![](https://i.imgur.com/8lqFniA.gif)| ![](https://i.imgur.com/VpvTNWr.gif) |
+| 상세 화면 | 상세 화면 |
+| ![](https://i.imgur.com/WMBLncF.gif) | ![](https://i.imgur.com/KHkrSiK.gif) |
 
 ## 🍎 Hashable과 AnyHashable 차이
-
 - 먼저 이 상황이 어떻게 생겼는지 알아보자.
 - Item에는 우리가 보여줘야하는 것들이 들어가야한다. (내 포인트, 오늘의 혜택, 나머지 혜택)
 - 하지만 모델로 본다면 (포인트)를 모델화한 MyPoint와 (오늘의 혜택, 나머지 혜택)을 모델화한 Benefit 구조체 2가지가 있다.
 - 아래의 코드에서는 Item에 MyPoint와 Benefit 둘 다 들어가야 하기 때문에 처음엔 아래와 같은 시도를 했다.
-
 ```swift
-
 typealias Item = Hashable
-
 ```
-
 - 하지만 이렇게 작성했을때는 아래와 같은 상황이 발생했다.
-
 ![](https://i.imgur.com/cXr7jiU.png)
-
 - 일단 현재 Hashable이 쓰여있는 자리에는 프로토콜 타입이 아닌 구현체가 들어가야한다. Hashable보다 더 큰 범위의 AnyHashable(구조체)를 사용했다.
-
 ```swift
-
 typealias Item = AnyHashable
 
 var dataSource: UICollectionViewDiffableDataSource<Section, Item>!
-
 ```
 
 ## 🍎 섹션이 여러개일때 각각의 데이터를 어떻게 구성 했는지~
@@ -32,7 +28,6 @@ var dataSource: UICollectionViewDiffableDataSource<Section, Item>!
     - **Presentation  -> Cell을 어떻게 구성할지?**
     - **Data          -> 내용을 무엇으로 채울지?**
     - **Layout        -> 내용이 채워진 Cell들을 어떻게 보여줄지?**
-
 ```swift
 dataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: collectionView, cellProvider: { [unowned self] collectionView, indexPath, item in
             guard let section = Section(rawValue: indexPath.section) else { return nil }
@@ -60,7 +55,6 @@ private func configureCell(for collectionView: UICollectionView, section: Sectio
     }
 }
 ```
-
 - dataSource에 적용할 snapshot을 아래와 같이 구성한다.
 ```swift
 var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
@@ -135,7 +129,7 @@ section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 16, bottom: 0,
 - ContentInSet의 좌,우로 값을 수정해 버튼의 좌,우에 공간이 들어간것을 볼 수 있다.
 
 ## 🍎 TodayBenefitCell에서 layer.maskToBounds란 무엇인가?
-- 링크 추가 예정.
+- [maskToBounds 정리](https://github.com/KayAhn0126/iOS-Study/tree/main/UI/UIView/ClipsToBounds-MasksToBounds)
 
 ## 🍎 TodayBenefitCell에서 ContentView에 alphaComponent란 무엇인가?
 - 투명도 조절을 하는 메서드
